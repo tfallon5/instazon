@@ -1,0 +1,67 @@
+  <head>
+    <meta charset="utf-8">
+    <title>instazon</title>
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link href="instazon.css" rel="stylesheet">
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+  </head>
+
+  <body>
+
+    <div class="container-narrow">
+
+      <div class="masthead">
+        <ul class="nav nav-pills pull-right">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+          <li class="active"><a class="btn btn-primary" href="#">Sign in</a></li>
+        </ul>
+        <h3 class="muted">instazon</h3>
+      </div>
+
+      <hr>
+
+      <div class="jumbotron">
+        <h2>Need it now?</h2>
+        <h1>Search below!</h1>
+        <p class="lead">Instazon brings the power of purchasing direct to the user without any of the hassle of searching all over the web. Just enter what you want to buy in the search below and order it. It's as simple as that.</p>
+        <div id="results">
+          {{>results}}
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="footer">
+        <p>&copy; Fallon 2013</p>
+      </div>
+
+    </div>
+  </body>
+
+<template name="results">
+  <div class="results">
+      <div class="input-append">
+      <input class="span8" id="appendedInputButton" type="Search" placeholder="What can we find for you?">
+      <button class="btn" id="inputButton" type="button">Go!</button>
+    </div>
+    </br>
+    <ul id="item-list">
+      {{#each results}}
+        {{> item}}
+      {{/each}}
+    </ul>
+  </div>
+</template>
+
+<template name="item">
+  <li id="item">
+      <div class="display">
+        <div class="img">{{image}}</div>
+        <div class="name">{{name}}</div>
+        <div class="price">{{price}}</div>
+        <a href={{link}} class="btn">Buy Now!</a>
+      </div>
+  <li>
+</template>

@@ -1,0 +1,5 @@
+Results = new Meteor.Collection("results");
+
+Meteor.publish('results', function() {
+    return Results.find({});
+});

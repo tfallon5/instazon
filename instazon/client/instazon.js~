@@ -1,0 +1,23 @@
+//if (Meteor.isClient) {
+Results = new Meteor.Collection("results");
+
+Template.results.results = function() {
+    return Results.find({});
+};
+
+Template.results.events({
+    'click input#inputButton' : function(){
+	Results.remove({});
+	var keywords = document.getElementById("appendedInputButton").value;
+	Results.insert({keys: keywords});
+    }
+});
+
+//}
+/*
+if (Meteor.isServer) {
+  Meteor.startup(function () {
+    // code to run on server at startup
+  });
+}
+*/

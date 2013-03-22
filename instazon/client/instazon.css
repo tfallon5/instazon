@@ -1,0 +1,59 @@
+/* CSS declarations go here */
+body {
+  padding-top: 20px;
+  padding-bottom: 40px;
+  background-image: url(http://subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/subtle_grunge.png);
+}
+
+.container-narrow {
+  margin: 0 auto;
+  max-width: 850px;
+}
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+.centered{
+  margin: 0 auto;
+}
+
+.jumbotron {
+  margin: 60px 0;
+  text-align: center;
+  opacity: 1;
+}
+.jumbotron h1 {
+  font-size: 80px;
+  line-height: 1;
+}
+.jumbotron h2 {
+  font-size: 60px;
+  line-height: 1;
+}
+.jumbotron #item-list{
+  position: absolute;
+}
+
+.jumbotron #item.display.img{
+  margin-right: 20px;
+  float: left;
+  height: 100px;
+  width: 100px;
+}
+
+.jumbotron #item.display.name, .jumbotron #item.display.price{
+  margin-right: 20px;
+  float: left;
+  font-size: 14px;
+}
+
+.jumbotron #item.display.link{
+  float: left;
+}
+
+.marketing {
+  margin: 60px 0;
+}
+.marketing p + h4 {
+  margin-top: 28px;
+}
