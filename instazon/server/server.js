@@ -34,25 +34,25 @@ Meteor.methods({
 	  awsSecret: 'rTgP0T0xi2mui5RC4nGfz4UOwJJg8Nc8JGitqLJa',
 	  assocId:   'wwwinstazonco-20', 
       });
-	
+      
       opHelper.execute('ItemSearch', {
 	  'SearchIndex': 'All',
 	  'Keywords': keywords,
-	  'ResponseGroup': 'ItemAttributes'
+	  'ResponseGroup': 'Medium,ItemAttributes'
       }, function(error, results) {
 	  if (error) { console.log('Error: ' + error + "\n") }
-	  console.log("Results:\n" + util.inspect(results) + "\n");
 	  for(var i=0; i<5; i++){
-	      var image = results.ItemSearchResponse.Items[0].Item[i].SmallImage;//["URL"];
-	      var ItemAttr = results.ItemSearchResponse.Items[0].Item[i].ItemAttributes;
-	      var ItemLinks = results.ItemSearchResponse.Items[0].Item[i].ItemLinks;
+	      var image = results.ItemSearchResponse.Items[0].Item[i].ImageSets[0].ImageSet[0].SmallImage[0].URL;
+	      var title = results.ItemSearchResponse.Items[0].Item[i].ItemAttributes[0].Title;
+	      var URL = results.ItemSearchResponse.Items[0].Item[i].DetailPageURL;
+	      var cost = results.ItemSearchResponse.Items[0].Item[i].OfferSummary[0].LowestNewPrice[0].FormattedPrice;
 	      Fiber(function(){
 		  Results.insert({
 		      id: user_id,
 		      image: image,
-		      price: ItemAttr["ListPrice"["FormattedPrice"]],
-		      name: ItemAttr["Title"],
-		      link: ItemLinks.ItemLink//["URL"]
+		      price: cost,
+		      name: title,
+		      link: URL
 		  });
 	      }).run();
 	  }
