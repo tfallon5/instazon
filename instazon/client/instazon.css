@@ -1,6 +1,6 @@
 /* CSS declarations go here */
 body {
-  padding-top: 20px;
+  padding-top: 10px;
   padding-bottom: 40px;
   background-image: url(http://subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/subtle_grunge.png);
 }
@@ -35,14 +35,20 @@ body {
 }
 
 .jumbotron #item.display.img{
-  margin-right: 20px;
+  margin-right: 10px;
   float: left;
-  height: 100px;
-  width: 100px;
+  height: 125px;
+  width: 125px;
 }
 
-.jumbotron #item.display.name, .jumbotron #item.display.price{
-  margin-right: 20px;
+.jumbotron #item.display.name{
+  margin-right: 10px;
+  float: left;
+  font-size: 14px;
+}
+
+.jumbotron #item.display.price{
+  margin-right: 10px;
   float: left;
   font-size: 14px;
 }

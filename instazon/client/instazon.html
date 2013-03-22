@@ -47,21 +47,14 @@
       <button class="btn" id="inputButton" type="button">Go!</button>
     </div>
     </br>
-    <ul id="item-list">
+    <table class="table table-hover">
+      <tbody>
       {{#each results}}
-        {{> item}}
+        <tr id="item">
+          {{helper}}
+        <tr>
       {{/each}}
-    </ul>
+      </tbody>
+    </table>
   </div>
-</template>
-
-<template name="item">
-  <li id="item">
-      <div class="display">
-        <div class="img">{{image}}</div>
-        <div class="name">{{name}}</div>
-        <div class="price">{{price}}</div>
-        <a href={{link}} class="btn">Buy Now!</a>
-      </div>
-  <li>
 </template>
